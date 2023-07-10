@@ -1,0 +1,70 @@
+<xml version="F1" board="ESP32 Dev Module" xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="0" x="100" y="50">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="serial_init" id="UUv%qGNdG-4!(!B[,if?">
+        <field name="SPEED">115200</field>
+        <next>
+          <block type="dht11_pin" id="B+%z(_j.Yl=|tE{]+]6$">
+            <value name="pin">
+              <block type="math_number" id="c}{ZL~4,5FK9WQa1UF/1">
+                <field name="NUM">4</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="1">
+        <statement name="CONTENT">
+          <block type="dht11_read" id="C@|cpixLl}X4f?(l#`a_">
+            <next>
+              <block type="serial_println" id="k%dGfpg)VIxs,eYZP`o7">
+                <value name="CONTENT">
+                  <block type="text_join" id="`+KUai12}^/XwnO3Jvl-">
+                    <mutation items="5"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="uy6X3H;oilHkqaS2jlVK">
+                        <field name="TEXT">溫度:</field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="dht11_get" id="ZivKX@oZqzJ|(F!R~@^t">
+                        <field name="type">temperature</field>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="text" id="eXkGNzXdLYNZ|p^Vp2u@">
+                        <field name="TEXT">'C 濕度:</field>
+                      </block>
+                    </value>
+                    <value name="ADD3">
+                      <block type="dht11_get" id="=}YD(un%wIm?UC#T]m{:">
+                        <field name="type">humidity</field>
+                      </block>
+                    </value>
+                    <value name="ADD4">
+                      <block type="text" id="QUJod3G1C5$y[G$?#[nu">
+                        <field name="TEXT">%</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="delay_custom" id="LylRy8{)W8EF!u4Oppt3">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="}J%RAj7e~TTe^*B25@*-">
+                        <field name="NUM">3000</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
