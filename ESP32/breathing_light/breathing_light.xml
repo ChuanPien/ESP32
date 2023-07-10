@@ -1,0 +1,108 @@
+<xml version="F1" board="ESP32 Dev Module" xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="_%TzP2LuLEs9J@zLCEes">i</variable>
+  </variables>
+  <block type="board_initializes_setup" id="0" x="303" y="124">
+    <field name="BOARD_TYPE">ESP32</field>
+    <next>
+      <block type="initializes_loop" id=")_AR72N7fc/,SS#s]qg:">
+        <statement name="CONTENT">
+          <block type="controls_for" id="ePvt~ptrCmI}Dc@/7Jc1">
+            <field name="VAR" id="_%TzP2LuLEs9J@zLCEes">i</field>
+            <value name="FROM">
+              <block type="math_number" id="S-{Hm%IaP6ck$dWQC;`-">
+                <field name="NUM">255</field>
+              </block>
+            </value>
+            <value name="TO">
+              <block type="math_number" id="RaX)x!m8:s.oMw5=5$S[">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="BY">
+              <block type="math_number" id="DB1D2fT}1C[d@-sZs9*J">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="esp32_analogwrite" id="~wsBs/!RI+$*$$`%PUwh">
+                <value name="pin">
+                  <block type="math_number" id="p_f%c$b(/;F^YhCOsby1">
+                    <field name="NUM">4</field>
+                  </block>
+                </value>
+                <value name="val">
+                  <block type="variables_get" id="e3242P*7ilFr+1LFj)%E">
+                    <field name="VAR" id="_%TzP2LuLEs9J@zLCEes">i</field>
+                  </block>
+                </value>
+                <value name="channel">
+                  <block type="math_number" id="y;fv9BeRJA(Y0(v*E[W1">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="delay_custom" id="N[qqEVqC/GQ3j#!s)htC">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="1kI_`cS{.e#O+RjWf6iE">
+                        <field name="NUM">50</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_for" id="h3z(/~+Jd]7aH`z5%Jxw">
+                <field name="VAR" id="_%TzP2LuLEs9J@zLCEes">i</field>
+                <value name="FROM">
+                  <block type="math_number" id="vwEo9)ebkz07I.2d40QB">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="TO">
+                  <block type="math_number" id="G)Naw*XP!uj7O,do:bK*">
+                    <field name="NUM">255</field>
+                  </block>
+                </value>
+                <value name="BY">
+                  <block type="math_number" id="8aDew3~Wb{{8U5%t#MBX">
+                    <field name="NUM">5</field>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="esp32_analogwrite" id="x7j/,+btI1:PnKYLJ$z$">
+                    <value name="pin">
+                      <block type="math_number" id="q`v+28X@2MfG~(N:r|,:">
+                        <field name="NUM">4</field>
+                      </block>
+                    </value>
+                    <value name="val">
+                      <block type="variables_get" id=";+/S,6`_dJg+ju,htY3j">
+                        <field name="VAR" id="_%TzP2LuLEs9J@zLCEes">i</field>
+                      </block>
+                    </value>
+                    <value name="channel">
+                      <block type="math_number" id="$h(9cWVAeoBF5s=EO3)V">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="delay_custom" id=".sQY^@Lp!yKh{BUayMpB">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="fxa30;C6_glMG%GpR9X3">
+                            <field name="NUM">50</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

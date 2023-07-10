@@ -1,0 +1,286 @@
+<xml version="F1" board="ESP32 Dev Module" xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="0" x="303" y="124">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="serial_init" id="T{EXwKZ9bxmcQ!IK,$Gi">
+        <field name="SPEED">115200</field>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="zYgj~RV_$QJr_gyhlQ.r">
+        <statement name="CONTENT">
+          <block type="serial_println" id="?M,{q/t:%QwhBb7hYKr]">
+            <value name="CONTENT">
+              <block type="text_join" id="[[a^-ym62OQVmAX/0Ge.">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                  <block type="text" id="dRh5y{kl`veKR4{a{caS">
+                    <field name="TEXT">光敏感測數值:</field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="inout_custom_analog_read" id="k;Puo?nj2pyi~2~xM98v">
+                    <value name="PIN_ANALOGREAD">
+                      <block type="math_number" id="XgAce`pW,dmGo9vS_Db1">
+                        <field name="NUM">36</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="controls_if" id="at7g3hnc23,VNN)3ui)%">
+                <mutation else="1"></mutation>
+                <value name="IF0">
+                  <block type="logic_compare" id="@q5{M;O,TVf$KM1q`XzF">
+                    <field name="OP">GTE</field>
+                    <value name="A">
+                      <block type="inout_custom_analog_read" id="{n~$q_LRQp;Yq:2+}KG$">
+                        <value name="PIN_ANALOGREAD">
+                          <block type="math_number" id=":@|o#DXg@e^kQt)Bb@sk">
+                            <field name="NUM">36</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="Y1o)*!+Zrp{v`7eVtv?]">
+                        <field name="NUM">2000</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="inout_custom_digital_write" id="qHh];MjJD+y)74$_`;B%">
+                    <value name="PIN">
+                      <block type="math_number" id="mph[=Z(zKYJcU#A}22Xk">
+                        <field name="NUM">15</field>
+                      </block>
+                    </value>
+                    <value name="STAT">
+                      <block type="inout_highlow" id="S%JSnLFL6t2m^#ZEK04u">
+                        <field name="BOOL">HIGH</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="inout_custom_digital_write" id="}i_n#h1i$9~=^v^X.(@O">
+                        <value name="PIN">
+                          <block type="math_number" id="MH+vzs0v?5K:1Py3g:nu">
+                            <field name="NUM">16</field>
+                          </block>
+                        </value>
+                        <value name="STAT">
+                          <block type="inout_highlow" id="kAPmLt@|,?Qz`^/+[}#B">
+                            <field name="BOOL">HIGH</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="inout_custom_digital_write" id="w_8YeH^K34TIcalryP}l">
+                            <value name="PIN">
+                              <block type="math_number" id="UF6xI7Y$ZLoM/F1c%=4D">
+                                <field name="NUM">17</field>
+                              </block>
+                            </value>
+                            <value name="STAT">
+                              <block type="inout_highlow" id="N*@B%HeFt}G=K+4G1WI!">
+                                <field name="BOOL">HIGH</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <statement name="ELSE">
+                  <block type="controls_if" id="{|FqhulH!2fw8Fnlz!AI">
+                    <mutation else="1"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id="#:]g/3QiQ#P,}__QPuQ.">
+                        <field name="OP">GTE</field>
+                        <value name="A">
+                          <block type="inout_custom_analog_read" id="/Te*s+{?x`MmW`G1i`S)">
+                            <value name="PIN_ANALOGREAD">
+                              <block type="math_number" id="T!J``fUj$l0}(g?|)z5I">
+                                <field name="NUM">36</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="%eiO=v90irmKkOyG7o?N">
+                            <field name="NUM">1000</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="inout_custom_digital_write" id="_BMkf9^dyFcghdJ!]2aD">
+                        <value name="PIN">
+                          <block type="math_number" id="7L5X;T#G_z7neS-o;!ME">
+                            <field name="NUM">15</field>
+                          </block>
+                        </value>
+                        <value name="STAT">
+                          <block type="inout_highlow" id="x*|IKH~O3[|gjS18wV3?">
+                            <field name="BOOL">HIGH</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="inout_custom_digital_write" id="|GeWDXRM+xyKt,CrHeba">
+                            <value name="PIN">
+                              <block type="math_number" id="^T4TFp5n7gz6+xmj`#o1">
+                                <field name="NUM">16</field>
+                              </block>
+                            </value>
+                            <value name="STAT">
+                              <block type="inout_highlow" id="l(=%:g0j(Z@kD8Rhz~J%">
+                                <field name="BOOL">HIGH</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="inout_custom_digital_write" id="povRqI6z?~waBkql)o=V">
+                                <value name="PIN">
+                                  <block type="math_number" id="n?+Atqk!Pj.+=GBSu]DE">
+                                    <field name="NUM">17</field>
+                                  </block>
+                                </value>
+                                <value name="STAT">
+                                  <block type="inout_highlow" id="K5|.oN76WZ?.hEIzjQSC">
+                                    <field name="BOOL">LOW</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <statement name="ELSE">
+                      <block type="controls_if" id="#*1$`B/vfFMnMHmht,IU">
+                        <mutation else="1"></mutation>
+                        <value name="IF0">
+                          <block type="logic_compare" id="*od2-hG1O{5RF!Mj^G?}">
+                            <field name="OP">GTE</field>
+                            <value name="A">
+                              <block type="inout_custom_analog_read" id="_Zw=#a{LRyR,i@EG#LnF">
+                                <value name="PIN_ANALOGREAD">
+                                  <block type="math_number" id="ZzD!3E{*M+pB|.@+RbBW">
+                                    <field name="NUM">36</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="xRhk:I+)Tj,*u}4)2f`c">
+                                <field name="NUM">500</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="inout_custom_digital_write" id="_4SSID{r~K{a),TFm2;X">
+                            <value name="PIN">
+                              <block type="math_number" id="W]Y}S$nf3slM,F8.B!,,">
+                                <field name="NUM">15</field>
+                              </block>
+                            </value>
+                            <value name="STAT">
+                              <block type="inout_highlow" id="|zxoJ=,B7]6@Qi!*$KAU">
+                                <field name="BOOL">HIGH</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="inout_custom_digital_write" id="wl@jcDqYO!PjqoscGyUT">
+                                <value name="PIN">
+                                  <block type="math_number" id="/hIyczr~4;Bi57(7jArC">
+                                    <field name="NUM">16</field>
+                                  </block>
+                                </value>
+                                <value name="STAT">
+                                  <block type="inout_highlow" id="H)GNW1JTnv8I#RFdk!cW">
+                                    <field name="BOOL">LOW</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="inout_custom_digital_write" id="2e#2N](oZ!5m.zx?mJZ6">
+                                    <value name="PIN">
+                                      <block type="math_number" id="d?VQ3XTr0zm+(z?b]0W`">
+                                        <field name="NUM">17</field>
+                                      </block>
+                                    </value>
+                                    <value name="STAT">
+                                      <block type="inout_highlow" id="3yKp:GS0eQf~M@xU8#g_">
+                                        <field name="BOOL">LOW</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <statement name="ELSE">
+                          <block type="inout_custom_digital_write" id="jb2dgpY8MflXnrJXol-4">
+                            <value name="PIN">
+                              <block type="math_number" id="`W$xxN]|J3Yhb@sLPH]*">
+                                <field name="NUM">15</field>
+                              </block>
+                            </value>
+                            <value name="STAT">
+                              <block type="inout_highlow" id="Y24tP68ft]H|w2WHoD`Y">
+                                <field name="BOOL">LOW</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="inout_custom_digital_write" id="+3@ZTgFY-%=%v.2Zo1th">
+                                <value name="PIN">
+                                  <block type="math_number" id="d0af$!P9a1Z2NoLNr9Wo">
+                                    <field name="NUM">16</field>
+                                  </block>
+                                </value>
+                                <value name="STAT">
+                                  <block type="inout_highlow" id="l+br8OLZ^7zke)Il9SZy">
+                                    <field name="BOOL">LOW</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="inout_custom_digital_write" id="0;HEAn{3Fp3TtC-lY!^h">
+                                    <value name="PIN">
+                                      <block type="math_number" id="4+55QeMUe:xaj?UROR$r">
+                                        <field name="NUM">17</field>
+                                      </block>
+                                    </value>
+                                    <value name="STAT">
+                                      <block type="inout_highlow" id="*SkdfY[Nvl;1d`y.ZIDL">
+                                        <field name="BOOL">LOW</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                  </block>
+                </statement>
+                <next>
+                  <block type="delay_custom" id="-b-RTo)Rf)#y=.5a{%I;">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="!Q8*T3TcvqURWmBP=0gB">
+                        <field name="NUM">1000</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

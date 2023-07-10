@@ -1,0 +1,283 @@
+<xml version="F1" board="ESP32 Dev Module" xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="0" x="303" y="124">
+    <field name="BOARD_TYPE">ESP32</field>
+    <next>
+      <block type="initializes_loop" id="Gp|w$e(o0n|W1Zq8*!Vn">
+        <statement name="CONTENT">
+          <block type="esp32_buzzer1" id="?%Uu*n0XGA8Qza1.@nV}">
+            <value name="pin">
+              <block type="math_number" id="(`YOrx.]R05lVobe~+uR">
+                <field name="NUM">25</field>
+              </block>
+            </value>
+            <value name="frequency">
+              <block type="text" id="NG?NTJE*qK=|{p6F=2jU">
+                <field name="TEXT">392</field>
+              </block>
+            </value>
+            <value name="delaytime">
+              <block type="text" id="%)uJI@Hmx0VUZ,4*o15E">
+                <field name="TEXT">500</field>
+              </block>
+            </value>
+            <next>
+              <block type="esp32_buzzer1" id="rPiuxDCox4yWL{zK4W_/">
+                <value name="pin">
+                  <block type="math_number" id="0-X5_W-0#$?IuX~B7P%[">
+                    <field name="NUM">25</field>
+                  </block>
+                </value>
+                <value name="frequency">
+                  <block type="text" id="x%/7aHNx.{m=L.oTiH?`">
+                    <field name="TEXT">330</field>
+                  </block>
+                </value>
+                <value name="delaytime">
+                  <block type="text" id="dT!RUTrOiF~UpQ$8g;/e">
+                    <field name="TEXT">500</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="esp32_buzzer1" id="2NU8/^%m3AJ],8)1+uPX">
+                    <value name="pin">
+                      <block type="math_number" id="0qZ{Iokhh[(B31.[^6@n">
+                        <field name="NUM">25</field>
+                      </block>
+                    </value>
+                    <value name="frequency">
+                      <block type="text" id="[_B~Z$[ag%)#P,v~@)QC">
+                        <field name="TEXT">330</field>
+                      </block>
+                    </value>
+                    <value name="delaytime">
+                      <block type="text" id="bn6RJ[Oq|HTN0@WeR649">
+                        <field name="TEXT">500</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="delay_custom" id="HZ}3?93SLh9:n3FG1x=A">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="6IKn%7mC3Ab)cAOvqmxw">
+                            <field name="NUM">500</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="esp32_buzzer1" id="dIP|r@doW:(Q~^ro-Nz1">
+                            <value name="pin">
+                              <block type="math_number" id=":yLdkH1DVF$Wxe0Wl2D`">
+                                <field name="NUM">25</field>
+                              </block>
+                            </value>
+                            <value name="frequency">
+                              <block type="text" id="oiu;M$Y|KJ#r%Dx~}:1H">
+                                <field name="TEXT">349</field>
+                              </block>
+                            </value>
+                            <value name="delaytime">
+                              <block type="text" id="A8iTv-YZE1q14Snba(wc">
+                                <field name="TEXT">500</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="esp32_buzzer1" id="tf?)t3Fp2G@AgXk$HRG2">
+                                <value name="pin">
+                                  <block type="math_number" id="M0`0{SYw4$0a-T%$8I;x">
+                                    <field name="NUM">25</field>
+                                  </block>
+                                </value>
+                                <value name="frequency">
+                                  <block type="text" id="?P2`5CSoY-:dy+ugD`nv">
+                                    <field name="TEXT">294</field>
+                                  </block>
+                                </value>
+                                <value name="delaytime">
+                                  <block type="text" id="H5*K*Vs/c+3SX{/1%UVd">
+                                    <field name="TEXT">500</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="esp32_buzzer1" id="G,D]F-MV0GI.PP1=G}gF">
+                                    <value name="pin">
+                                      <block type="math_number" id="!SQKQ5./BS8T$v9-zp@_">
+                                        <field name="NUM">25</field>
+                                      </block>
+                                    </value>
+                                    <value name="frequency">
+                                      <block type="text" id="CphViY$wQqOQ#05qzWgf">
+                                        <field name="TEXT">294</field>
+                                      </block>
+                                    </value>
+                                    <value name="delaytime">
+                                      <block type="text" id="{;]5O,Y=;ls+L+zWj@1k">
+                                        <field name="TEXT">500</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="delay_custom" id="?h:eFzKn5Y}~W1Y;gD~P">
+                                        <value name="DELAY_TIME">
+                                          <block type="math_number" id="s*-V9Q*%dJWDL2=mT;dL">
+                                            <field name="NUM">500</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="esp32_buzzer1" id="%_mf|WPA@jlLYpA7OL@O">
+                                            <value name="pin">
+                                              <block type="math_number" id="7B|fWCdDOww#p=IxSH.Q">
+                                                <field name="NUM">25</field>
+                                              </block>
+                                            </value>
+                                            <value name="frequency">
+                                              <block type="text" id="M.(qcN,+zt0k2C3W[]1B">
+                                                <field name="TEXT">262</field>
+                                              </block>
+                                            </value>
+                                            <value name="delaytime">
+                                              <block type="text" id="W,5JADFVy=hiI/i-it1{">
+                                                <field name="TEXT">500</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="esp32_buzzer1" id="n)-jp/Ht2X9;%]b0HQS;">
+                                                <value name="pin">
+                                                  <block type="math_number" id="eIZWV0Iq.tLf_Ra=8|]V">
+                                                    <field name="NUM">25</field>
+                                                  </block>
+                                                </value>
+                                                <value name="frequency">
+                                                  <block type="text" id="nq)5Fw0ZI_z)7N*Bjq7A">
+                                                    <field name="TEXT">294</field>
+                                                  </block>
+                                                </value>
+                                                <value name="delaytime">
+                                                  <block type="text" id="{j?~/{Qp~4FA/bL-0C|+">
+                                                    <field name="TEXT">500</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="esp32_buzzer1" id=",NTD7?x#5*-QM-Zbqsp(">
+                                                    <value name="pin">
+                                                      <block type="math_number" id="_hhZ.;4)/@K)#(f72e|3">
+                                                        <field name="NUM">25</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="frequency">
+                                                      <block type="text" id="8BYlNkx{qf*R;|zdtdMq">
+                                                        <field name="TEXT">330</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="delaytime">
+                                                      <block type="text" id="$H4;GG|oG@J@j,zx||r%">
+                                                        <field name="TEXT">500</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="esp32_buzzer1" id="|:VjmT9,)xq*,cAiI*Gj">
+                                                        <value name="pin">
+                                                          <block type="math_number" id="6*y0(_1vaXYXkw-n!%ZA">
+                                                            <field name="NUM">25</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="frequency">
+                                                          <block type="text" id="D|@}P+B[W2C}]JaUKO4Z">
+                                                            <field name="TEXT">349</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="delaytime">
+                                                          <block type="text" id="KY,xf^+ce$.BtBdUGv,5">
+                                                            <field name="TEXT">500</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="esp32_buzzer1" id="S[LPF2pIWEH;wH=#OOnA">
+                                                            <value name="pin">
+                                                              <block type="math_number" id="p(V3[hlPlSl4?HK8yf_0">
+                                                                <field name="NUM">25</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="frequency">
+                                                              <block type="text" id="3-TawwiQLBZ5dr);`g{W">
+                                                                <field name="TEXT">392</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="delaytime">
+                                                              <block type="text" id="F07SS^TuDU=K}jiAU.c,">
+                                                                <field name="TEXT">500</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="esp32_buzzer1" id="e^)XEuE|7qQx,3wzRLKx">
+                                                                <value name="pin">
+                                                                  <block type="math_number" id="63vI{*=y9BWBo%WS=RC(">
+                                                                    <field name="NUM">25</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="frequency">
+                                                                  <block type="text" id="=FmIP]OvX#VNRs!csbbx">
+                                                                    <field name="TEXT">392</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="delaytime">
+                                                                  <block type="text" id="/DPQCy3A4l7XPyFNln^`">
+                                                                    <field name="TEXT">500</field>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="esp32_buzzer1" id="[4Rf#6#5ySwS_mJN~f7r">
+                                                                    <value name="pin">
+                                                                      <block type="math_number" id="tJlZ=C$-6%AB[r!9.6A|">
+                                                                        <field name="NUM">25</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="frequency">
+                                                                      <block type="text" id="OQ~7|6OjW.6WSga,i/-^">
+                                                                        <field name="TEXT">392</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="delaytime">
+                                                                      <block type="text" id="e46#qJg_Z7_[%%m23hV6">
+                                                                        <field name="TEXT">500</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="delay_custom" id="Eu.v(41_uk%ToxxwPPH*">
+                                                                        <value name="DELAY_TIME">
+                                                                          <block type="math_number" id="m{T~35alUkU3}#?Qelvd">
+                                                                            <field name="NUM">2000</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
