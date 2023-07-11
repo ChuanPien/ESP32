@@ -1,0 +1,218 @@
+<xml version="F1" board="ESP32 Dev Module" xmlns="https://developers.google.com/blockly/xml">
+  <block type="webserver_prepare_body" id="0%rwEOWv6l:i.0@9_d?[" x="690" y="-30">
+    <statement name="WEBSERVER_BODY">
+      <block type="webserver_paragraph_begin" id="~5_hq~9[C~sHCs?vo_fj">
+        <field name="ALIGN">left</field>
+        <field name="SIZE">5</field>
+        <field name="RGB">#ff0000</field>
+        <statement name="PARAGRAPH">
+          <block type="webserver_text" id="zMZJ)rHRu;l+U30!b7g1">
+            <field name="BOLD">Yes</field>
+            <value name="CONTENT">
+              <block type="text_join" id="cdIz-l225v+GgRDhmpIy">
+                <mutation items="5"></mutation>
+                <value name="ADD0">
+                  <block type="text" id="5mlqzGOB{UgTIrWlNO?f">
+                    <field name="TEXT">溫度:</field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="dht_read_pin" id="ot:-!dHTp[9K81U/f5Gy">
+                    <field name="SENSOR">DHT11</field>
+                    <field name="TYPE">C</field>
+                    <value name="PIN">
+                      <block type="math_number" id="-3A96I@W1jTR5G]M+9mn">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="ADD2">
+                  <block type="text" id=";WGC!kKSeA8n=d4Yg6RP">
+                    <field name="TEXT">'C 濕度:</field>
+                  </block>
+                </value>
+                <value name="ADD3">
+                  <block type="dht_read_pin" id="moT6.mFCTqQYAAdv;Jyo">
+                    <field name="SENSOR">DHT11</field>
+                    <field name="TYPE">h</field>
+                    <value name="PIN">
+                      <block type="math_number" id="Z$0PC_DsU1PR$hBfM56O">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="ADD4">
+                  <block type="text" id="qRM:iZgYr=xpy;c8o;*:">
+                    <field name="TEXT">%</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="webserver_paragraph_begin" id="Xj38:`zQszcW6M(FDp-[">
+            <field name="ALIGN">left</field>
+            <field name="SIZE">5</field>
+            <field name="RGB">#ffcc33</field>
+            <statement name="PARAGRAPH">
+              <block type="webserver_text" id="2+lT2|6}8RLl2e09c#nP">
+                <field name="BOLD">Yes</field>
+                <value name="CONTENT">
+                  <block type="text_join" id="XUOSaEUOyK+_E{yrcs{Z">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="Zo__;QX#xLzzJSH}nJ+B">
+                        <field name="TEXT">IP:</field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="linkit_wifi_ip_address" id="x2zk[^lHL{2{~5*%I6N["></block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="webserver_digital" id="4_?4lK3;5k=%~8|2`PJ{">
+                    <field name="BTN_TYPE">2</field>
+                    <value name="PIN">
+                      <block type="math_number" id="QLZBpap(kRTzm5G9{@}`">
+                        <field name="NUM">5</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="board_initializes_setup" id="0" x="100" y="50">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="ljj_serial_begin" id="PZ)/;]sjKL=1^v$vW`)3">
+        <field name="SERIAL_PORT">Serial</field>
+        <field name="BOUND_RATE">115200</field>
+        <next>
+          <block type="linkit_wifi_wait_until_ready" id="ZJ6qJJ,^y_5{z`;.pLI+">
+            <value name="SSID">
+              <block type="text" id="x[n0ybbYo3po%j^S|:1W">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+            <value name="PASSWORD">
+              <block type="text" id="K^,N4hf%8a{]OiZkIFW2">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+            <next>
+              <block type="webserver_init" id="(|vwQd3kkXQxnF}`Ma,j">
+                <value name="PORT">
+                  <block type="math_number" id="sHCnHV?j`{Lo2F-hdj%b">
+                    <field name="NUM">80</field>
+                  </block>
+                </value>
+                <value name="SECS">
+                  <block type="math_number" id="fA|KM!,ae,sJLp1(BdY;">
+                    <field name="NUM">5</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="webserver_title" id="fb*Z1|(;5qccuR%xxqP/">
+                    <field name="RGB">#66cccc</field>
+                    <value name="TITLE">
+                      <block type="text" id="w%zC}-?gLYfoJirD6h$V">
+                        <field name="TEXT">ESP32網路伺服器</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="1">
+        <statement name="CONTENT">
+          <block type="ljj_serial_println" id=".xwz16xZ$wlcn,;7yXXs">
+            <field name="SERIAL_PORT">Serial</field>
+            <value name="TEXT">
+              <block type="text_join" id="Bwj%~fW.uH?2hgi5{]NJ">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                  <block type="text" id="N5bu2{vFG,GP(4I!YK@/">
+                    <field name="TEXT">IP:</field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="linkit_wifi_ip_address" id="k`~[QlFR{Q=wnelKxGpj"></block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="ljj_serial_println" id="WoffG=HJ^/^eRlk4Ph3Q">
+                <field name="SERIAL_PORT">Serial</field>
+                <value name="TEXT">
+                  <block type="text_join" id="`+KUai12}^/XwnO3Jvl-">
+                    <mutation items="5"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="uy6X3H;oilHkqaS2jlVK">
+                        <field name="TEXT">溫度:</field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="dht_read_pin" id="p$OurTl8vh$Rk35%~c*/">
+                        <field name="SENSOR">DHT11</field>
+                        <field name="TYPE">C</field>
+                        <value name="PIN">
+                          <block type="math_number" id="@DvgUxJhX7Z0S~tXC6*8">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="text" id="eXkGNzXdLYNZ|p^Vp2u@">
+                        <field name="TEXT">'C 濕度:</field>
+                      </block>
+                    </value>
+                    <value name="ADD3">
+                      <block type="dht_read_pin" id="yIl?-io?`!s,+h|SH*0y">
+                        <field name="SENSOR">DHT11</field>
+                        <field name="TYPE">h</field>
+                        <value name="PIN">
+                          <block type="math_number" id="E;FXB)}v0T/GTistMwX5">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="ADD4">
+                      <block type="text" id="QUJod3G1C5$y[G$?#[nu">
+                        <field name="TEXT">%</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="delay_custom" id="LylRy8{)W8EF!u4Oppt3">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="}J%RAj7e~TTe^*B25@*-">
+                        <field name="NUM">3000</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

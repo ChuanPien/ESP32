@@ -1,0 +1,176 @@
+<xml version="F1" board="ESP32 Dev Module" xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="0" x="170" y="50">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="serial_init" id="qU7EnK]?%7Xx8rLG8YX|">
+        <field name="SPEED">115200</field>
+        <next>
+          <block type="esp32_wifi_wait_until_ready" id="q7sDzO]^xz5HtEZ0p,%j">
+            <value name="SSID">
+              <block type="text" id="l@}9pal3LFZw7.di!,j.">
+                <field name="TEXT">UH</field>
+              </block>
+            </value>
+            <value name="PASSWORD">
+              <block type="text" id="bqGvwLbrgjtFjqUMHk5K">
+                <field name="TEXT">0910505205</field>
+              </block>
+            </value>
+            <next>
+              <block type="dht11_pin" id="dR-9_oTD^WK_9M,@/Fk5">
+                <value name="pin">
+                  <block type="math_number" id="j3CbvsEwCmP]}fle_^da">
+                    <field name="NUM">4</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="connect_mqtt" id="8cSeJWEwrN$_f(XI2:~a">
+                    <value name="BROKER">
+                      <block type="text" id="Sr?LecP7q8^{5U2Fy#hu">
+                        <field name="TEXT">mqttgo.io</field>
+                      </block>
+                    </value>
+                    <value name="PORT">
+                      <block type="math_number" id="RchO/PLvP,E#Od2;QKWZ">
+                        <field name="NUM">1883</field>
+                      </block>
+                    </value>
+                    <value name="ID">
+                      <block type="text" id="DX2F0Ez2R|cEw:!X2e6I">
+                        <field name="TEXT"></field>
+                      </block>
+                    </value>
+                    <value name="USERNAME">
+                      <block type="text" id="@ttCgxg-)RcU5zGT+R`u">
+                        <field name="TEXT"></field>
+                      </block>
+                    </value>
+                    <value name="PASSWORD">
+                      <block type="text" id="Y:=k8jPDs1!fv[8r_ibP">
+                        <field name="TEXT"></field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="subscribe_mqtt" id="khx},BK*yLYy9p)R0F+P">
+                        <value name="TOPIC">
+                          <block type="text" id="`1K0($Z}=Q`ZX5)(WfQN">
+                            <field name="TEXT">cp/m</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="1">
+        <statement name="CONTENT">
+          <block type="dht11_read" id="CO2esG9}e5Ysjdo!`Yst">
+            <next>
+              <block type="serial_println" id="JyxGs(iZv9Unh4ji,yhx">
+                <value name="CONTENT">
+                  <block type="text_join" id="tcYB?CV0CcR.5?SZNJx2">
+                    <mutation items="5"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="nI/`d8{u#nfJNZFuPXjk">
+                        <field name="TEXT">T : </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="dht11_get" id="2Sgx-PWe6uN2yKjW#~r~">
+                        <field name="type">temperature</field>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="text" id="$EF[0j?XDnqw7b]6k^WI">
+                        <field name="TEXT">'C | H : </field>
+                      </block>
+                    </value>
+                    <value name="ADD3">
+                      <block type="dht11_get" id="_Vg]s0g,aXT5IM[=NMAT">
+                        <field name="type">humidity</field>
+                      </block>
+                    </value>
+                    <value name="ADD4">
+                      <block type="text" id="{s#B*Nt4ii^3N3T9G{gP">
+                        <field name="TEXT">%</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="publish_mqtt" id="O}#WZz^6,D*IDL3#(@Xl">
+                    <value name="TOPIC">
+                      <block type="text" id="sGgz$XB-a#Uo.zdkYU0u">
+                        <field name="TEXT">cp/t</field>
+                      </block>
+                    </value>
+                    <value name="MESSAGE">
+                      <block type="dht11_get" id="mSNIk)Y1CPtlk~dok1Td">
+                        <field name="type">temperature</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="publish_mqtt" id="S[x#:{I}GFFp+1!bvA9|">
+                        <value name="TOPIC">
+                          <block type="text" id="vsyA=WQy6?#LvH@8oV37">
+                            <field name="TEXT">cp/h</field>
+                          </block>
+                        </value>
+                        <value name="MESSAGE">
+                          <block type="dht11_get" id="2~{/3gtkjWPMZ%@t1oZ%">
+                            <field name="type">humidity</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="delay_custom" id="D.79VJz37JO*o*F_ip8|">
+                            <value name="DELAY_TIME">
+                              <block type="math_number" id="vYYM7IcbL)CU4a[]%T(e">
+                                <field name="NUM">2000</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+  <block type="mqtt_event" id="ABRV!Cne3BffgD?vSYBT" x="510" y="231">
+    <statement name="MSG_TOPIC_EQAL">
+      <block type="controls_if" id="ZAtF#fsR.cOQ%Btaf)5d">
+        <value name="IF0">
+          <block type="logic_compare" id="U?,z,fQDt_!4OtAwMtD!">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="mqtt_received_topic" id="r_#}3PM;D#g$w^`@*CMU"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="@6M]!S-!+M}xX6d79.~l">
+                <field name="TEXT">cp/m</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="serial_println" id="g-KiOQ^[f$nK-Dm@Kip?">
+            <value name="CONTENT">
+              <block type="mqtt_received_msg" id="ziPxtNvQW_W+flKKwlG."></block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>
