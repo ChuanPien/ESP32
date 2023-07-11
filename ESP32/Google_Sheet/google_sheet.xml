@@ -1,0 +1,140 @@
+<xml version="F1" board="ESP32 Dev Module" xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="0" x="170" y="50">
+    <field name="BOARD_TYPE">ESP32</field>
+    <statement name="CONTENT">
+      <block type="serial_init" id="ElZPFqM]huyAp*=jP3%o">
+        <field name="SPEED">115200</field>
+        <next>
+          <block type="esp32_wifi_wait_until_ready" id="q7sDzO]^xz5HtEZ0p,%j">
+            <value name="SSID">
+              <block type="text" id="l@}9pal3LFZw7.di!,j.">
+                <field name="TEXT">UH</field>
+              </block>
+            </value>
+            <value name="PASSWORD">
+              <block type="text" id="bqGvwLbrgjtFjqUMHk5K">
+                <field name="TEXT">0910505205</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_println" id="TqxW#bdo^vHi|Q!59/?N">
+                <value name="CONTENT">
+                  <block type="text" id="h39Pqh%F}(lLa_yBhe3i">
+                    <field name="TEXT">WiFi Connect</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="dht11_pin" id="dR-9_oTD^WK_9M,@/Fk5">
+                    <value name="pin">
+                      <block type="math_number" id="j3CbvsEwCmP]}fle_^da">
+                        <field name="NUM">4</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="setupSheets" id="R8LTbeL.vexd!}0J2o}N">
+                        <value name="sheetId">
+                          <block type="text" id="PBZO_m.wiZWHKUwX0uF2">
+                            <field name="TEXT">15avDmHyvMPi8Hla5rOqE7b9-XamerNcwYGeLyNPeFjw</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="setupForm" id="XZwkBCU:)lE@Q:o1i)Ze">
+                            <value name="sheetTag">
+                              <block type="text" id="U97Zd|)qnogcC(VwZv_u">
+                                <field name="TEXT">Data</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="1">
+        <statement name="CONTENT">
+          <block type="dht11_read" id="CO2esG9}e5Ysjdo!`Yst">
+            <next>
+              <block type="serial_println" id="$EfPqy?9@^FI#[7j_^`=">
+                <value name="CONTENT">
+                  <block type="text_join" id="Pe4%ii{*YOhTTorYlC.y">
+                    <mutation items="5"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="hm5-c`~o=gciSoSkHak5">
+                        <field name="TEXT">T : </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="dht11_get" id="~8g^od}*O2j6W55R1ULO">
+                        <field name="type">temperature</field>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="text" id="-J]%$+oei#1amjOxlME8">
+                        <field name="TEXT">'C | H : </field>
+                      </block>
+                    </value>
+                    <value name="ADD3">
+                      <block type="dht11_get" id="Ex;1tXazgSebDaY;p,PH">
+                        <field name="type">humidity</field>
+                      </block>
+                    </value>
+                    <value name="ADD4">
+                      <block type="text" id="LUxrpFFN2/@YTT|?p]S(">
+                        <field name="TEXT">%</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="sendToGoogle" id="HT7Ir_jylXiT@~]n77)$">
+                    <field name="dateInclude">1</field>
+                    <value name="data">
+                      <block type="data_join" id="f)mXX7|C-yt(+XmJu,Y;" inline="false">
+                        <mutation items="3"></mutation>
+                        <value name="ADD0">
+                          <block type="dht11_get" id="Qgm`L)BnqGUg){_?gDT)">
+                            <field name="type">temperature</field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="dht11_get" id="]fF)|`b6pARffj~8@fc3">
+                            <field name="type">humidity</field>
+                          </block>
+                        </value>
+                        <value name="ADD2">
+                          <block type="inout_custom_analog_read" id=",1]}s*tR{LX,M^fqpJv!">
+                            <value name="PIN_ANALOGREAD">
+                              <block type="math_number" id="UeG([[)U=tx=}).C[:a^">
+                                <field name="NUM">36</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="delay_custom" id="D.79VJz37JO*o*F_ip8|">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="vYYM7IcbL)CU4a[]%T(e">
+                            <field name="NUM">2000</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
