@@ -6,7 +6,8 @@
 ## 上課簡介
   + 學習ESP32運用
   + 學習Node-RED運用
-  + 
+  + 學習ThingSpeak運用
+  + 學習MQTT運用
 
 ## 課程連結
  + [ESP32相關資料(Google Drive)](https://drive.google.com/drive/folders/1SEjzMuAN2GasK7vg8Ia3n43ldSde-MXe?usp=sharing)
